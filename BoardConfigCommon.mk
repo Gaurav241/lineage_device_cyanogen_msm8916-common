@@ -23,7 +23,7 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8916
 
 TARGET_NO_BOOTLOADER := true
 
-#TEMP
+# TEMP
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_PHONY_TARGETS := true
 
@@ -159,6 +159,7 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib64/libizat_core.so|libshims_get_process_name.so \
     /system/vendor/lib/libflp.so|libshims_flp.so \
     /system/vendor/lib/libizat_core.so|libshims_get_process_name.so
+    /system/vendor/lib64/lib-imsdpl.so|libshims_boringssl.so
 
 # Wi-Fi
 BOARD_HAS_QCOM_WLAN := true
