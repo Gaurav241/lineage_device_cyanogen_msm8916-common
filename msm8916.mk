@@ -103,7 +103,8 @@ PRODUCT_PACKAGES += \
 
 # IMS
 PRODUCT_PACKAGES += \
-    libshims_boringssl
+    libshims_boringssl \
+    libshims_ims
 
 # Init scripts
 PRODUCT_PACKAGES += \
