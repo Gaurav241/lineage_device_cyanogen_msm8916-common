@@ -32,7 +32,7 @@ PRODUCT_PACKAGES += \
     tinymix
 
 PRODUCT_PACKAGES += \
-    audio.primary.msm8916 \
+#    audio.primary.msm8916 \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing

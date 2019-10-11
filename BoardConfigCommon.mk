@@ -54,7 +54,7 @@ TARGET_USES_64_BIT_BINDER := true
 endif
 
 # ANT+
-BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
+#BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
 # Audio
 AUDIO_FEATURE_ENABLED_KPI_OPTIMIZE := true
@@ -106,8 +106,8 @@ BOARD_HAVE_QCOM_FM := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_msm8916
-TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8916
+#TARGET_INIT_VENDOR_LIB := libinit_msm8916
+#TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8916
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
@@ -157,7 +157,8 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(PLATFORM_PATH)
 #include device/qcom/sepolicy-legacy/sepolicy.mk
 #BOARD_SEPOLICY_DIRS += \
 #    $(PLATFORM_PATH)/sepolicy
-BOARD_SEPOLICY_DIRS += device/yu/lettuce/sepolicy_q
+BOARD_SEPOLICY_DIRS += device/cyanogen/msm8916-common/sepolicy_q
+
 # Shims
 TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib64/libflp.so|libshims_flp.so \
