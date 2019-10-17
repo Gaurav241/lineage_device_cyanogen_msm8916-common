@@ -108,7 +108,11 @@ PRODUCT_PACKAGES += \
     libshims_boringssl \
     libshims_ims
 
-PRODUCT_BOOT_JARS += ims-ext-common_system
+PRODUCT_BOOT_JARS += \
+    ims-ext-common_system
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
 
 # Init scripts
 PRODUCT_PACKAGES += \
