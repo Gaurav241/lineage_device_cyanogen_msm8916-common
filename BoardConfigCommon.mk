@@ -53,9 +53,6 @@ TARGET_CPU_VARIANT := cortex-a53
 TARGET_USES_64_BIT_BINDER := true
 endif
 
-# ANT+
-BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
-
 # Audio
 AUDIO_FEATURE_ENABLED_KPI_OPTIMIZE := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
@@ -154,10 +151,8 @@ TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_cm
 TARGET_RELEASETOOLS_EXTENSIONS := $(PLATFORM_PATH)
 
 # SELinux
-#include device/qcom/sepolicy-legacy/sepolicy.mk
-#BOARD_SEPOLICY_DIRS += \
-#    $(PLATFORM_PATH)/sepolicy
-BOARD_SEPOLICY_DIRS += device/yu/lettuce/sepolicy_q
+BOARD_SEPOLICY_DIRS += device/cyanogen/msm8916-common/sepolicy_q
+
 # Shims
 TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib64/libflp.so|libshims_flp.so \
