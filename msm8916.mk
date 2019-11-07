@@ -103,6 +103,8 @@ PRODUCT_PACKAGES += \
 
 # IMS
 PRODUCT_PACKAGES += \
+    ims-ext-common \
+    ims_ext_common.xml \
     libshims_boringssl \
     libshims_ims
 
@@ -208,6 +210,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
     $(LOCAL_PATH)/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
+
+# Telephony
+PRODUCT_PACKAGES += \
+    telephony-ext \
+    qti-telephony-hidl-wrapper \
+    qti_telephony_hidl_wrapper.xml
+
+PRODUCT_BOOT_JARS += telephony-ext
 
 # Trust HAL
 PRODUCT_PACKAGES += \
