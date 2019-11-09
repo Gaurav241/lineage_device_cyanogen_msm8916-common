@@ -13,12 +13,13 @@ ro.config.media_vol_steps=25
 ro.config.vc_call_vol_steps=7
 
 # Bluetooth
-vendor.bluetooth.soc=pronto
-vendor.qcom.bluetooth.soc=pronto
+vendor.bluetooth.soc=smd
+vendor.qcom.bluetooth.soc=smd
 ro.bluetooth.dun=true
 ro.bluetooth.hfp.ver=1.7
 ro.bluetooth.sap=true
 ro.qualcomm.bt.hci_transport=smd
+qcom.bluetooth.soc=smd
 
 # Display
 debug.hwui.use_buffer_age=false
