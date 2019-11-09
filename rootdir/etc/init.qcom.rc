@@ -164,6 +164,43 @@ service rmt_storage /system/vendor/bin/rmt_storage
     writepid /dev/cpuset/system-background/tasks
     shutdown critical
 
+service imsqmidaemon /system/vendor/bin/imsqmidaemon
+    class main
+    user system
+    socket ims_qmid stream 0660 system radio
+    group radio net_raw log diag oem_2950
+    writepid /dev/cpuset/system-background/tasks
+
+service imsdatadaemon /system/vendor/bin/imsdatadaemon
+    class main
+    user system
+    socket ims_datad stream 0660 system radio
+    group system wifi radio inet net_raw log diag net_admin oem_2950
+    writepid /dev/cpuset/system-background/tasks
+    disabled
+
+on property:sys.ims.QMI_DAEMON_STATUS=1
+    start imsdatadaemon
+
+service ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
+   class main
+   user system
+   socket ims_rtpd stream 0660 system radio
+   group radio net_raw diag  log oem_2950
+   writepid /dev/cpuset/system-background/tasks
+   disabled
+
+service imscmservice /system/vendor/bin/imscmservice
+   class main
+   user system
+   group radio net_raw diag log oem_2950
+   writepid /dev/cpuset/system-background/tasks
+   disabled
+
+on property:sys.ims.DATA_DAEMON_STATUS=1
+    start ims_rtp_daemon
+    start imscmservice
+
 service hciattach /system/vendor/bin/init.qcom.bt.sh
     class late_start
     user bluetooth
